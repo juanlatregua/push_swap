@@ -2,17 +2,17 @@ NAME = push_swap
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 
-SRC_PATH = src/
-OBJ_PATH = obj/
-
-SRC			= main.c \
-			  input_check.c	inpup_check_utils.c\
-			  init.c \
-			  stack.c \
-			  swap.c push.c rotate.c reverser_rotate.c \
-			  sort_tiny.c sort.c \
-			  position.c cost.c	do_move.c \
-			  utils.c
+SRC	= src/initialization.c \
+      src/input_check.c \
+      src/sorting_algorithms.c \
+      src/position.c \
+      src/cost.c \
+      src/calculate_move.c \
+      src/operations.c \
+      src/stack_functions.c \
+      src/utils.c \
+      src/error.c \
+      src/main.c
 SRC	= $(addprefix $(SRC_PATH), $(SRC))
 OBJ = $(SRC:.c=.o)
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ))
