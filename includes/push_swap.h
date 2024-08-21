@@ -25,13 +25,24 @@ un índice a cada valor*/
 t_stack		*fill_stack_values(int ac, char **av);
 void		assign_index(t_stack *stack_a, int ac);
 
-/* Input Check 
-1. verfica si la entrada es correcta
-2. Comprueba que es un dígito
-3. Comprueba el signo
-4. Compara dos cadenas*/
+/* Input Check
+1. Comprueba si el argumento es un número.
+2. Comprueba si hay argumentos duplicados
+3. Comprueba si el argunto es 0.
+4. verfica si la entrada es correcta
 
+*/
+
+static int	arg_is_number(char	*av);
+static int	have_duplicates(char	**av);
+static int	arg_is_zero(char	*av);
 int			is_correct_input(char **av);
+
+/* Input Check_utils 
+1. Comprueba que es un dígito
+2. Comprueba el signo
+3. Compara dos cadenas*/
+
 int			is_digit(char c);
 int			is_sign(char c);
 int			nbstr_cmp(const char *s1, const char *s2);
