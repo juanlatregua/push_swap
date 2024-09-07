@@ -6,11 +6,11 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:19:03 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/08/21 17:41:32 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/07 13:37:01 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "push_swap.h"
+#include "push_swap.h"
 
 int	is_digit(char	c)
 {
@@ -44,5 +44,5 @@ int	nbstr_cmp(const char	*s1, const char	*s2)
 		i++;
 		j++;
 	}
-	return ((unsigned char)s1[i] - (unsigned char)s2[j])
+	return ((unsigned char)s1[i] - (unsigned char)s2[j]);
 }

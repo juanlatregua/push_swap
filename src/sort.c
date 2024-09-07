@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 11:02:23 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 09:17:11 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/07 13:24:01 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,5 @@ void	sort(t_stack	**stack_a, t_stack	**stack_b)
 		do_cheapest_move(stack_a, stack_b);
 	}
 	if (!is_sorted(*stack_a))
-	{
 		shift_stack(stack_a);
-	}
 }

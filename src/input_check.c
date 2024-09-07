@@ -6,11 +6,11 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:11:26 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/08/21 18:02:16 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/07 13:38:27 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "push_swap.h"
+#include "push_swap.h"
 
 static int	arg_is_number(char	*av)
 {
@@ -19,7 +19,7 @@ static int	arg_is_number(char	*av)
 	i = 0;
 	if (is_sign(av[i]) && av[i + 1] != '\0')
 		i++;
-	while (av[i] && is_digit)
+	while (av[i] && is_digit(av[i]))
 		i++;
 	if (av[i] != '\0' && !is_digit(av[i]))
 		return (0);

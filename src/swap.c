@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:58:33 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 10:21:14 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/07 12:46:31 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	do_sa(t_stack	**stack_a)
 
 /*do_sb: swap the top 2 elements of stack b. 
 Prints "sb"*/
-void	do_sb(t_stack	**stackb)
+void	do_sb(t_stack	**stack_b)
 {
 	swap(*stack_b);
 	ft_putstr("sb\n");
@@ -49,6 +49,6 @@ of stack b. */
 void	do_ss(t_stack	**stack_a, t_stack	**stack_b)
 {
 	swap(*stack_a);
-	swap(*stack_a);
+	swap(*stack_b);
 	ft_putstr("ss\n");
 }

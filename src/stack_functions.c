@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:53:19 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 10:21:10 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/07 13:16:18 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,9 @@ t_stack	*stack_new(int	value)
 {
 	t_stack	*new;
 	
-	new = (t_stack *)malloc(sizeof(t_stack));
+	new = malloc(sizeof	*new);
 	if (!new)
 		return (NULL);
-
 	new->value = value;
 	new->index = 0;
 	new->pos = -1;

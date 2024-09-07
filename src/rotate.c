@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:57:34 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/07/17 16:57:52 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/07 13:26:47 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*rotate: the top element of the stack is sent to the bottom
 manejando el erro de pilas con 0 o 1 elemento*/
-static void	rotate(t_stack	*stack)
+static void	rotate(t_stack	**stack)
 {
 	t_stack	*tmp;
 	t_stack	*tail;
@@ -22,7 +22,7 @@ static void	rotate(t_stack	*stack)
 	if (!stack || !(*stack) || !((*stack)->next))
 	return ;
 
-	tmp = stack;
+	tmp = *stack;
 	*stack = (*stack)->next;
 	tail = get_stack_bottom(*stack);
 	tmp->next = NULL;
@@ -34,7 +34,7 @@ static void	rotate(t_stack	*stack)
 printsd ra.*/
 void	do_ra(t_stack	**stack_a)
 {
-	rotate(*stack_a);
+	rotate(stack_a);
 	ft_putstr("ra\n");
 }
 
@@ -42,7 +42,7 @@ void	do_ra(t_stack	**stack_a)
 prints rb. */
 void	do_rb(t_stack	**stack_b)
 {
-	rotate(*stack_b);
+	rotate(stack_b);
 	ft_putstr("rb\n");
 	
 }
@@ -51,8 +51,8 @@ void	do_rb(t_stack	**stack_b)
 prints rb.*/
 void	do_rr(t_stack	**stack_a, t_stack	**stack_b)
 {
-	rotate(*stack_a);
-	rotate(*stack_b);
+	rotate(stack_a);
+	rotate(stack_b);
 	ft_putstr("rr\n");
 }
 

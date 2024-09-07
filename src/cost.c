@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 17:31:44 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/06 18:58:50 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/07 14:46:04 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,11 @@ void	do_cheapest_move(t_stack	**stack_a, t_stack	**stack_b)
 	{
 		if (nb_abs(tmp->cost_a) + nb_abs(tmp->cost_b) < nb_abs(cheapest))
 		{
+			cheapest = nb_abs(tmp->cost_b) + nb_abs(tmp->cost_a);
 			cost_a = tmp->cost_a;
 			cost_b = tmp->cost_b;
 		}
 		tmp = tmp->next;
 	}
-	do_move(stack_a, stack_b, cost_b)
+	do_move(stack_a, stack_b, cost_a, cost_b);
 }

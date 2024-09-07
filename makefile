@@ -1,13 +1,11 @@
 NAME = push_swap
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 
 SRC_PATH = src/
 OBJ_PATH = obj/
 
-SRC = cost.c \
-      do_move.c \
-      error.c \
+SRC = do_move.c \
       initialization.c \
       input_check_utils.c input_check.c \
       position.c \
@@ -15,18 +13,20 @@ SRC = cost.c \
       sort_tiny.c sort.c \
       stack_functions.c \
       utils.c \
-      main.c
-SRC	= $(addprefix $(SRC_PATH), $(SRC))
-OBJ = $(SRC:$(SRC_PATH)%.c=$(OBJ_PATH)%.o)
+      main.c \
+      cost.c
+SRCS	= $(addprefix $(SRC_PATH), $(SRC))
+OBJ   = $(SRC:.c=.o)
+OBJS  = $(addprefix $(OBJ_PATH), $(OBJ))
 INCS = -I ./includes/
 
 all: $(OBJ_PATH) $(NAME)
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c | $(OBJ_PATH)
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)
 
 $(OBJ_PATH):
-	mkdir -p $(OBJ_PATH)
+	mkdir $(OBJ_PATH)
 
 $(NAME): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)

@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 10:31:03 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/06 20:28:36 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/07 14:05:39 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static void	get_position(t_stack	**stack)
 	t_stack	*tmp;
 	int	i;
 
+	if (!stack || !*stack)
+		return ;
 	tmp = *stack;
 	i = 0;
 	while (tmp)
@@ -33,8 +35,10 @@ int	get_lowest_index_position(t_stack	**stack)
 	int	lowest_index;
 	int	lowest_pos;
 	
+	if (!stack || !*stack)
+		return (-1) ;
 	tmp = *stack;
-	lowest_index = 	INT_MAX;
+	lowest_index = INT_MAX;
 	get_position(stack);
 	lowest_pos = tmp->pos;
 	while (tmp)

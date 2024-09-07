@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:22:01 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 09:39:32 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/07 18:35:18 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ long int	ft_atoi(const char	*str)
 		i++;
 	else if (str[i] == '-')
 	{
-		isneg = -1;
+		isneg *= -1;
 		i++;
 	}
 	while (is_digit(str[i]))
 	{
-		nb = nb * 10 + (str[i] - '0');
+		nb = (nb * 10) + (str[i] - '0');
 		i++;
 	}
 	return (nb * isneg);
@@ -72,4 +72,14 @@ int	nb_abs(int	nb)
 	if (nb < 0)
 		return (nb * -1);
 	return (nb);
+}
+
+void	exit_error(t_stack	**stack_a, t_stack	**stack_b)
+{
+	if (stack_a == NULL || *stack_a != NULL)
+		free_stack(stack_a);
+	if (stack_b == NULL || *stack_b != NULL)
+		free_stack(stack_b);
+	write(2, "Error\n", 6);
+	exit (1);
 }

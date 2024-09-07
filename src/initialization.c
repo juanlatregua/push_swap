@@ -6,11 +6,11 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 12:33:12 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/08/21 12:48:19 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/07 13:39:55 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "push_swap.h"
+#include "push_swap.h"
 
 t_stack	*fill_stack_values(int	ac, char	**av)
 {
