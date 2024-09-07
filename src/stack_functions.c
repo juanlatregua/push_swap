@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:53:19 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/07/17 14:06:29 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/07 10:21:10 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,16 @@
 /* get_stack_bottom: return the last element of the stack*/
 t_stack	*get_stack_bottom(t_stack	*stack)
 {
+	while (stack && stack->next != NULL)
+		stack = stack->next;
 	return (stack);
 }
 
 /* get_stack_before_bottom: return the last before element of the stack*/
 t_stack	*get_stack_before_bottom(t_stack	*stack)
 {
+	while (stack && stack->next && stack->next->next != NULL)
+		stack = stack->next;
 	return(stack);
 }
 
@@ -28,17 +32,51 @@ t_stack	*get_stack_before_bottom(t_stack	*stack)
 return the new stack whith the new stack element*/
 t_stack	*stack_new(int	value)
 {
+	t_stack	*new;
+	
+	new = (t_stack *)malloc(sizeof(t_stack));
+	if (!new)
+		return (NULL);
+
+	new->value = value;
+	new->index = 0;
+	new->pos = -1;
+	new->target_pos = -1;
+	new->cost_a = -1;
+	new->cost_b = -1;
+	new->next = NULL;
 	return(new);
 }
 
 /*stack_add_bottom: add a element to the bottom of the stack */
 void	stack_add_bottom(t_stack	**stack, t_stack	*new)
 {
+	t_stack	*tail;
+
+	if (!stack || !new)
+		return ;
+	if (*stack == NULL)
+	{
+		*stack = new;
+		return ;
+	}
+	tail = get_stack_bottom(*stack);
+	tail->next = new;
 
 }
 
 /*get_stack_size: return the number of elements of the stack*/
 int	get_stack_size(t_stack	*stack)
 {
+	int	size;
+	
+	size = 0;
+	if (!stack)
+		return (0);
+	while (stack)
+	{
+		stack = stack->next;
+		size++;
+	}
 	return (size);
 }

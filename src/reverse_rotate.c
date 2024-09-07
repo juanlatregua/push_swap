@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 17:00:38 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/07/17 17:23:53 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/06 20:45:15 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,12 @@ static void	rev_rotate(t_stack	**stack)
 	t_stack	*tmp;
 	t_stack	*tail;
 	t_stack	*before_tail;
+
+	if (!*stack || !(*stack)->next)
+		return ;
 	
 	tail = get_stack_bottom(*stack);
-	before_tail = get_stack_before_bottom(stack);
+	before_tail = get_stack_before_bottom(*stack);
 	tmp = *stack;
 	*stack = tail;
 	(*stack)->next = tmp;

@@ -4,16 +4,25 @@
 *	Returns 0 if the stack is not sorted, 1 if it is sorted.
 */
 int	is_sorted(t_stack *stack)
-/* push_swap:
-*	Chooses a sorting method depending on the number
-*	of values to be sorted.
-*/
+{
+	while (stack->new != NULL)
+	{
+		if (stack->value > stack->next->value)
+			return (0);
+			stack = stack->next;
+	}
+	return (1)
+}
+
 static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
-/* main:
-*	Checks if the input is correct, in which case it initializes stacks a and b,
-*	assigns each value indexes and sorts the stacks. When sorting is done, frees
-*	the stacks and exits.
-*/
+{
+	if (stack_size == 2 && !is_sorted(*stack_a))
+		do_sa(stack_a);
+	else if (stack_size == 3)
+		tiny_sort(stack_a)
+	else if (stack_size > 3 && !is_sorted(*stack_a))
+		sort(stack_a, stack_b)
+}
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;

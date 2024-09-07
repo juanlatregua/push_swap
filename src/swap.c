@@ -6,11 +6,11 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:58:33 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/07/17 16:58:53 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/07 10:21:14 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.c"
+#include "push_swap.h"
 
 /* swap: the 2 element of a stack. Do nothing if there is only
 one or no elements*/
@@ -32,7 +32,7 @@ static void	swap(t_stack	*stack)
 Prints "sa"*/
 void	do_sa(t_stack	**stack_a)
 {
-	swap(stack_a);
+	swap(*stack_a);
 	ft_putstr("sa\n");
 }
 
@@ -40,7 +40,7 @@ void	do_sa(t_stack	**stack_a)
 Prints "sb"*/
 void	do_sb(t_stack	**stackb)
 {
-	swap(stack_b);
+	swap(*stack_b);
 	ft_putstr("sb\n");
 }
 
