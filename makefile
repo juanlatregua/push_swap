@@ -17,13 +17,12 @@ SRC = cost.c \
       utils.c \
       main.c
 SRC	= $(addprefix $(SRC_PATH), $(SRC))
-OBJ = $(SRC:.c=.o)
-OBJ = $(addprefix $(OBJ_PATH), $(OBJ))
+OBJ = $(SRC:$(SRC_PATH)%.c=$(OBJ_PATH)%.o)
 INCS = -I ./includes/
 
-all = $(OBJ_PATH) $(NAME)
+all: $(OBJ_PATH) $(NAME)
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.c
+$(OBJ_PATH)%.o: $(SRC_PATH)%.c | $(OBJ_PATH)
 	$(CC) $(CFLAGS) -c $< -o $@ $(INCS)
 
 $(OBJ_PATH):
