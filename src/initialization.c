@@ -6,18 +6,18 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 12:33:12 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 13:39:55 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 17:44:14 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*fill_stack_values(int	ac, char	**av)
+t_stack	*fill_stack_values(int ac, char **av)
 {
-	t_stack	*stack_a;
+	t_stack		*stack_a;
 	long int	nb;
-	int	i;
-	
+	int			i;
+
 	stack_a = NULL;
 	nb = 0;
 	i = 1;
@@ -29,18 +29,17 @@ t_stack	*fill_stack_values(int	ac, char	**av)
 		if (i == 1)
 			stack_a = stack_new((int)nb);
 		else
-			stack_add_bottom(&stack_a,stack_new((int)nb));
+			stack_add_bottom(&stack_a, stack_new((int)nb));
 		i++;
 	}
 	return (stack_a);
-
 }
 
-void	assign_index(t_stack	*stack_a, int	stack_size)
+void	assign_index(t_stack *stack_a, int stack_size)
 {
 	t_stack	*ptr;
 	t_stack	*highest;
-	int	value;
+	int		value;
 
 	while (--stack_size > 0)
 	{

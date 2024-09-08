@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:59:35 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 13:28:37 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 17:53:21 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,12 @@ static void	push(t_stack	**src, t_stack	**dest)
 {
 	t_stack	*tmp;
 
-	if(*src == NULL)
+	if (*src == NULL)
 		return ;
 	tmp = (*src)->next;
 	(*src)->next = *dest;
 	*dest = *src;
 	*src = tmp;
-	
 }
 
 /*do_pa : pushes the top element of stack b to the top of stack a.

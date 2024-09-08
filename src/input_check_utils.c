@@ -6,18 +6,18 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 17:19:03 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 13:37:01 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 17:45:24 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_digit(char	c)
+int	is_digit(char c)
 {
-	return (c >= '0' && c <='9');
+	return (c >= '0' && c <= '9');
 }
 
-int	is_sign(char	c)
+int	is_sign(char c)
 {
 	return (c == '+' || c == '-');
 }

@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 16:57:34 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 13:26:47 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 17:55:30 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,12 @@ static void	rotate(t_stack	**stack)
 	t_stack	*tail;
 
 	if (!stack || !(*stack) || !((*stack)->next))
-	return ;
-
+		return ;
 	tmp = *stack;
 	*stack = (*stack)->next;
 	tail = get_stack_bottom(*stack);
 	tmp->next = NULL;
 	tail->next = tmp;
-	
 }
 
 /*do_ra: sends the top element of stack a to the bottom. 
@@ -44,7 +42,6 @@ void	do_rb(t_stack	**stack_b)
 {
 	rotate(stack_b);
 	ft_putstr("rb\n");
-	
 }
 
 /*do_rr: sends the top element of both stacks a-b to the bottom.

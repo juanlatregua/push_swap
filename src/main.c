@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 11:03:19 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 13:36:02 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 17:46:54 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	is_sorted(t_stack *stack)
 	{
 		if (stack->value > stack->next->value)
 			return (0);
-			stack = stack->next;
+		stack = stack->next;
 	}
 	return (1);
 }
@@ -35,6 +35,7 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 	else if (stack_size > 3 && !is_sorted(*stack_a))
 		sort(stack_a, stack_b);
 }
+
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;

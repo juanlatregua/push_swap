@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/01 11:57:27 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 13:24:53 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 17:56:32 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,11 @@
 static int	find_highest_index(t_stack	*stack)
 {
 	int	index;
-	
+
 	index = stack->index;
 	while (stack)
 	{
-		if(stack->index > index)
+		if (stack->index > index)
 			index = stack->index;
 		stack = stack->next;
 	}
@@ -29,6 +29,7 @@ static int	find_highest_index(t_stack	*stack)
 void	tiny_sort(t_stack	**stack)
 {
 	int	highest;
+
 	if (is_sorted(*stack))
 		return ;
 	highest = find_highest_index(*stack);

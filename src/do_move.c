@@ -6,14 +6,15 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 17:25:06 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 13:43:57 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 17:41:20 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /*do_rev_rotate_both*/
-static void	do_rev_rotate_both(t_stack	**a, t_stack	**b, int	*cost_a, int	*cost_b)
+static void	do_rev_rotate_both(t_stack	**a, t_stack	**b,
+int	*cost_a, int	*cost_b)
 {
 	while (*cost_a < 0 && *cost_b < 0)
 	{
@@ -24,7 +25,8 @@ static void	do_rev_rotate_both(t_stack	**a, t_stack	**b, int	*cost_a, int	*cost_
 }
 
 /*do_rotate_both*/
-static void	do_rotate_both(t_stack	**a, t_stack	**b, int	*cost_a, int	*cost_b)
+static void	do_rotate_both(t_stack	**a, t_stack	**b,
+int	*cost_a, int	*cost_b)
 {
 	while (*cost_a > 0 && cost_b > 0)
 	{
@@ -69,9 +71,9 @@ static void	do_rotate_b(t_stack	**b, int	*cost)
 		}
 	}
 }
-
 /*do_move*/
-void	do_move(t_stack	**a, t_stack	**b, int	cost_a, int	cost_b)
+
+void	do_move(t_stack	**a, t_stack **b, int cost_a, int cost_b)
 {
 	if (cost_a < 0 && cost_b < 0)
 		do_rev_rotate_both(a, b, &cost_a, &cost_b);

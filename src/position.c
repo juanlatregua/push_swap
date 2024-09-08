@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/22 10:31:03 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 14:05:39 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 17:51:25 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	get_position(t_stack	**stack)
 {
 	t_stack	*tmp;
-	int	i;
+	int		i;
 
 	if (!stack || !*stack)
 		return ;
@@ -32,11 +32,11 @@ static void	get_position(t_stack	**stack)
 int	get_lowest_index_position(t_stack	**stack)
 {
 	t_stack	*tmp;
-	int	lowest_index;
-	int	lowest_pos;
-	
+	int		lowest_index;
+	int		lowest_pos;
+
 	if (!stack || !*stack)
-		return (-1) ;
+		return (-1);
 	tmp = *stack;
 	lowest_index = INT_MAX;
 	get_position(stack);
@@ -53,7 +53,7 @@ int	get_lowest_index_position(t_stack	**stack)
 	return (lowest_pos);
 }
 
-static int	get_target(t_stack	**a,  int	b_idx, int	target_idx, int	target_pos)
+static int	get_target(t_stack **a, int b_idx, int target_idx, int target_pos)
 {
 	t_stack	*tmp_a;
 
@@ -82,11 +82,10 @@ static int	get_target(t_stack	**a,  int	b_idx, int	target_idx, int	target_pos)
 	return (target_pos);
 }
 
-
 void	get_target_position(t_stack	**stack_a, t_stack	**stack_b)
 {
 	t_stack	*tmp_b;
-	int	target_pos;
+	int		target_pos;
 
 	tmp_b = *stack_b;
 	get_position(stack_a);

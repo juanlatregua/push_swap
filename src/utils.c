@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:22:01 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 18:35:18 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 18:04:13 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 void	free_stack(t_stack	**stack)
 {
 	t_stack	*tmp;
-	
+
 	if (!stack || !(*stack))
-		return;
+		return ;
 	while (*stack)
 	{
 		tmp = (*stack)->next;
@@ -27,12 +27,13 @@ void	free_stack(t_stack	**stack)
 	}
 	*stack = NULL;
 }
+
 /* ft_atoi: converts alphanumeric string of chars int a long int*/
 long int	ft_atoi(const char	*str)
 {
 	long int	nb;
-	int	isneg;
-	int	i;
+	int			isneg;
+	int			i;
 
 	nb = 0;
 	isneg = 1;
@@ -51,6 +52,7 @@ long int	ft_atoi(const char	*str)
 	}
 	return (nb * isneg);
 }
+
 /* ft_putstr: prints a given strint of chars to the standard output*/
 void	ft_putstr(char	*str)
 {
@@ -62,12 +64,12 @@ void	ft_putstr(char	*str)
 		write (1, &str[i], 1);
 		i++;
 	}
-	
 }
+
 /* nb_abs: return the absolute value of a given numb.
 	the ab nb is used to mesure the distance from 0 of the numb. 
 	- or +, ex: for -6 is 6*/
-int	nb_abs(int	nb)
+int	nb_abs(int nb)
 {
 	if (nb < 0)
 		return (nb * -1);

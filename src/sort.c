@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 11:02:23 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/08 11:17:10 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 17:57:12 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	sort(t_stack	**stack_a, t_stack	**stack_b)
 {
 	push_all_save_three(stack_a, stack_b);
 	tiny_sort(stack_a);
-	while(*stack_b)
+	while (*stack_b)
 	{
 		get_target_position(stack_a, stack_b);
 		get_cost(stack_a, stack_b);
