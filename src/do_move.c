@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 17:25:06 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/08 17:41:20 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 18:19:35 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	*cost_a, int	*cost_b)
 static void	do_rotate_both(t_stack	**a, t_stack	**b,
 int	*cost_a, int	*cost_b)
 {
-	while (*cost_a > 0 && cost_b > 0)
+	while (*cost_a > 0 && *cost_b > 0)
 	{
 		(*cost_a)--;
 		(*cost_b)--;

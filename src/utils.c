@@ -6,11 +6,14 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/17 13:22:01 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/08 18:04:13 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 20:09:46 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <unistd.h>
+#include <stdlib.h>
+
 /* free_stack: frees each element in a given stack 
 	and set the stack pointer to NULL*/
 void	free_stack(t_stack	**stack)
@@ -78,9 +81,9 @@ int	nb_abs(int nb)
 
 void	exit_error(t_stack	**stack_a, t_stack	**stack_b)
 {
-	if (stack_a == NULL || *stack_a != NULL)
+	if (stack_a != NULL && *stack_a != NULL)
 		free_stack(stack_a);
-	if (stack_b == NULL || *stack_b != NULL)
+	if (stack_b != NULL && *stack_b != NULL)
 		free_stack(stack_b);
 	write(2, "Error\n", 6);
 	exit (1);

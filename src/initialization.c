@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/21 12:33:12 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/08 17:44:14 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 19:57:35 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,15 @@ void	assign_index(t_stack *stack_a, int stack_size)
 		while (ptr)
 		{
 			if (ptr->value == INT_MIN && ptr->index == 0)
+			{
 				ptr->index = 1;
+			}	
 			if (ptr->value > value && ptr->index == 0)
 			{
 				value = ptr->value;
 				highest = ptr;
-				ptr = stack_a;
 			}
-			else
-				ptr = ptr->next;
+			ptr = ptr->next;
 		}
 		if (highest != NULL)
 			highest->index = stack_size;
