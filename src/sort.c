@@ -6,7 +6,7 @@
 /*   By: jsilva-m <jsilva-m@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 11:02:23 by jsilva-m          #+#    #+#             */
-/*   Updated: 2024/09/07 13:24:01 by jsilva-m         ###   ########.fr       */
+/*   Updated: 2024/09/08 11:17:10 by jsilva-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void	push_all_save_three(t_stack	**stack_a, t_stack	**stack_b)
 	stack_size = get_stack_size(*stack_a);
 	pushed = 0;
 	i = 0;
-	while (stack_size > 6 && i < stack_size && pushed < stack_size / 2)
+	while (stack_size >= 6 && i < stack_size && pushed < stack_size / 2)
 	{
 		if ((*stack_a)->index <= stack_size / 2)
 		{
